@@ -42,7 +42,7 @@ export default function Navbar() {
           <a href="#hero" className="flex items-center gap-2">
             <motion.span
               whileHover={{ scale: 1.05 }}
-              className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              className="text-2xl md:text-3xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent"
             >
               Pempek Senay
             </motion.span>
@@ -73,7 +73,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(prev => !prev)}
             className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
@@ -83,7 +83,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -97,7 +97,14 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    const element = document.querySelector(link.href);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                   className="block py-2 text-foreground/80 hover:text-primary transition-colors font-medium"
                 >
                   {link.name}
