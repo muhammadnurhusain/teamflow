@@ -25,7 +25,7 @@ export default function Footer() {
                 <Camera size={20} />
               </a>
               <a
-                href="https://wa.me/6281234567890"
+                href="https://wa.me/6282299693525"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white dark:bg-background rounded-full hover:bg-primary hover:text-white transition-colors duration-200"
