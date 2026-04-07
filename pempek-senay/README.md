@@ -117,7 +117,7 @@ pempek-senay/
 ## 🔧 Customization
 
 ### Update WhatsApp Number
-Search and replace `6281234567890` in all files with your actual WhatsApp number.
+Search and replace `6282299693525` in all files with your actual WhatsApp number.
 
 ### Update Product Images
 Replace the emoji placeholders in `ProductMenuSection.tsx` with actual product images using Next.js `Image` component.

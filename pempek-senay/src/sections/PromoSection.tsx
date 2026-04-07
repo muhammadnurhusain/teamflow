@@ -40,7 +40,7 @@ export default function PromoSection() {
           </p>
 
           <motion.a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6282299693525"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

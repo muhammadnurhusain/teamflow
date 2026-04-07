@@ -8,7 +8,7 @@ export default function FloatingWhatsAppButton() {
     <>
       {/* Desktop Floating Button */}
       <motion.a
-        href="https://wa.me/6281234567890"
+        href="https://wa.me/6282299693525"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}
@@ -29,7 +29,7 @@ export default function FloatingWhatsAppButton() {
         className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-card border-t border-border p-4 shadow-lg"
       >
         <a
-          href="https://wa.me/6281234567890"
+          href="https://wa.me/6282299693525"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary-hover text-white py-4 rounded-full font-bold text-lg transition-colors duration-200"

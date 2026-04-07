@@ -55,7 +55,7 @@ export default function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <motion.a
-                href="https://wa.me/6281234567890"
+                href="https://wa.me/6282299693525"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}

@@ -93,12 +93,12 @@ export default function Footer() {
                   className="text-primary mt-0.5 flex-shrink-0"
                 />
                 <a
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/6282299693525"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  +62 812-3456-7890
+                  +62 822-9969-3525
                 </a>
               </li>
               <li className="flex items-start gap-3">
