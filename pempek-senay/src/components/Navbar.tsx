@@ -17,13 +17,23 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const toggleMenu = () => {
+    setIsOpen(prev => !prev);
+  };
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 200); // kasih delay
+  };
 
   return (
     <motion.nav
@@ -73,7 +83,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(prev => !prev)}
+            onClick={toggleMenu}
             className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
@@ -83,27 +93,24 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence initial={false}>
+      <AnimatePresence initial={false} mode="wait">
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white dark:bg-card border-t border-border"
+            className="md:hidden bg-white dark:bg-card border-t border-border pointer-events-auto"
+            onClick={() => setIsOpen(false)}
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-4 py-4 space-y-3" onClick={(e) => e.stopPropagation()}>
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    setIsOpen(false);
-                    const element = document.querySelector(link.href);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    handleNavClick(link.href);
                   }}
                   className="block py-2 text-foreground/80 hover:text-primary transition-colors font-medium"
                 >
